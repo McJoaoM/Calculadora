@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CALCULADORA DE NOTAS</h1>
+    <p>Aprovado?</p>
+    <p>Não, falta xx pra passar.</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Notas Trimestrais</title>
+</head>
+<body>
+    <h1>Calculadora de Notas Trimestrais</h1>
+    <p>Insira suas notas e clique em Calcular:</p>
+
+    <label for="nota1">Nota do primeiro trimestre:</label>
+    <input type="number" id="nota do primeiro trimestre"><br>
+
+    <label for="nota2">Nota do segundo trimestre:</label>
+    <input type="number" id="nota do segundo trimestre"><br>
+
+    <label for="nota3">Nota do terceiro trimestre</label>
+    <input type="number" id="nota do terceiro trimestre"><br>
+
+    <button onclick="calcularNotaTrimestral()">Calcular</button>
+
+    <p>Sua nota trimestral é: <span id="resultado"></span></p>
+
+    <script>
+        function calcularNotaTrimestral() {
+            // Obter as notas inseridas pelo usuário
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+
+            // Verificar se as notas são válidas
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert("Por favor, insira notas válidas.");
+                return;
+            }
+
+            // Calcular a nota trimestral (média das três notas)
+            var notaTrimestral = (nota1 + nota2 + nota3) / 3;
+
+            // Exibir o resultado na página
+            document.getElementById("resultado").textContent = notaTrimestral.toFixed(2);
+        }
+    </script>
+</body>
+</html>
